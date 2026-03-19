@@ -14,15 +14,11 @@
 
         body {
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1, #fce4ec);
             background-size: 400% 400%;
             animation: gradientShift 8s ease infinite;
             overflow-x: hidden;
-            overflow-y: auto;
             padding: 24px 0;
         }
 
@@ -61,14 +57,15 @@
             display: none;
             z-index: 1;
             position: relative;
+            width: 100%;
+            min-height: calc(100vh - 48px);
         }
 
         .page.active {
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100%;
-            width: 100%;
+            flex-wrap: wrap;
         }
 
         .card {
