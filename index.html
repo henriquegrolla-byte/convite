@@ -379,7 +379,7 @@
                 </div>
                 <div class="btn-group" id="btnGroup">
                     <button class="btn btn-accept" onclick="acceptInvite()">Total 💖</button>
-                    <button class="btn btn-refuse" id="btnRefuse" onmouseover="dodgeButton()" onclick="dodgeButton()">Nn 😔</button>
+                    <button class="btn btn-refuse" id="btnRefuse" onmouseover="dodgeButton()" ontouchstart="dodgeButton(event)">Nn 😔</button>
                 </div>
             </div>
         </div>
@@ -490,7 +490,8 @@
         }
 
         // Refuse button dodge logic
-        function dodgeButton() {
+        function dodgeButton(e) {
+            if (e) e.preventDefault();
             const btn = document.getElementById('btnRefuse');
             const group = document.getElementById('btnGroup');
             const rect = group.getBoundingClientRect();
